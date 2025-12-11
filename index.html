@@ -1,150 +1,217 @@
-<!DOCTYPE html>
+Put your HTML text here<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moodi – Gizlilik Politikası / Privacy Policy</title>
-  <meta name="robots" content="noindex,nofollow" />
-  <style>
-    :root { --accent:#2b62ac; --text:#1b1f23; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); margin: 32px auto; max-width: 820px; line-height: 1.6; padding: 0 16px; }
-    h1,h2 { color: var(--accent); margin-top: 1.6em; }
-    nav { display:flex; gap:8px; margin-bottom:16px; }
-    nav a { padding:8px 12px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; color:var(--text); }
-    nav a.active { border-color: var(--accent); color: var(--accent); font-weight:600; }
-    .muted { color:#6b7280; }
-    .card { background:#fafafa; border:1px solid #eee; border-radius:14px; padding:16px 18px; }
-    footer { margin-top:32px; font-size:.93rem; color:#6b7280; }
-    .lang { display:none; }
-    .lang.active { display:block; }
-  </style>
-  <script>
-    function switchLang(lang){
-      document.querySelectorAll(".lang").forEach(el=>el.classList.remove("active"));
-      document.getElementById(lang).classList.add("active");
-      document.querySelectorAll("nav a").forEach(a=>a.classList.remove("active"));
-      document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
-      document.documentElement.lang = lang === "tr" ? "tr" : "en";
-    }
-    document.addEventListener("DOMContentLoaded", ()=>switchLang("tr"));
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Jump Runner - Privacy Policy / Gizlilik Politikası</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0B0B2A;
+            color: #ffffff;
+        }
+        .container {
+            background-color: #1a1a3a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #00FFFF;
+            border-bottom: 2px solid #00FFFF;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #0088FF;
+            margin-top: 30px;
+        }
+        .lang-section {
+            margin-bottom: 50px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        a {
+            color: #00FFFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            border-top: 1px solid #333;
+            margin: 40px 0;
+        }
+        .app-name {
+            text-align: center;
+            font-size: 2em;
+            color: #00FFFF;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Moodi – Gizlilik Politikası <span class="muted">/ Privacy Policy</span></h1>
-    <p class="muted">Son güncelleme / Last updated: <strong>27 Ağustos 2025</strong></p>
-  </header>
-
-  <nav aria-label="Language switch">
-    <a href="#tr" data-lang="tr" onclick="switchLang('tr');return false;">Türkçe</a>
-    <a href="#en" data-lang="en" onclick="switchLang('en');return false;">English</a>
-  </nav>
-
-  <!-- TR -->
-  <section id="tr" class="lang">
-    <div class="card">
-      <h2>1) Genel</h2>
-      <p>Moodi; ruh hali takibi, nefes egzersizleri, motivasyon mesajları ve kişisel öneriler sunan bir mobil uygulamadır. Kullanıcı gizliliği birincil önceliğimizdir.</p>
-
-      <h2>2) Toplanan Veriler</h2>
-      <ul>
-        <li><strong>Hesap Bilgisi:</strong> Google ile giriş yapıldığında ad, e-posta.</li>
-        <li><strong>Uygulama Verileri:</strong> Mood kayıtları, görev/alışkanlık ilerlemesi, egzersiz kullanımı.</li>
-        <li><strong>Cihaz/Log:</strong> Çökme raporları ve anonim kullanım istatistikleri.</li>
-        <li><strong>Reklam:</strong> AdMob anonimize edilmiş reklam verileri.</li>
-      </ul>
-
-      <h2>3) Kullanım Amaçları</h2>
-      <ul>
-        <li>Uygulama işlevlerini sağlamak ve geliştirmek,</li>
-        <li>Kişiselleştirilmiş öneriler ve istatistikler sunmak,</li>
-        <li>Güvenlik, hata ayıklama ve performans analizleri yapmak.</li>
-      </ul>
-
-      <h2>4) Üçüncü Taraflar</h2>
-      <ul>
-        <li><strong>Firebase</strong> (Auth/Firestore/Analytics)</li>
-        <li><strong>Google Sign-In</strong></li>
-        <li><strong>Google AdMob</strong> (reklam)</li>
-        <li>(Varsa) <strong>Firebase Cloud Messaging</strong> (bildirim)</li>
-      </ul>
-      <p>Bu hizmetlerin veri işleme süreçleri; ilgili sağlayıcıların gizlilik politikalarına tabidir.</p>
-
-      <h2>5) Saklama ve Güvenlik</h2>
-      <p>Veriler bulut altyapımızda (Firebase) saklanır. Hesabınızı sildiğinizde kişisel veriler makul süre içinde silinir/anomize edilir.</p>
-
-      <h2>6) Kullanıcı Hakları</h2>
-      <ul>
-        <li>Erişim, düzeltme ve silme talebinde bulunma,</li>
-        <li>Onayı geri çekme,</li>
-        <li>KVKK ve ilgili mevzuat kapsamındaki diğer haklar.</li>
-      </ul>
-
-      <h2>7) Çocukların Gizliliği</h2>
-      <p>Moodi 13 yaş altı kullanım için tasarlanmamıştır.</p>
-
-      <h2>8) Politika Değişiklikleri</h2>
-      <p>Güncellemeler bu sayfada yayımlanır ve “Son güncelleme” tarihi değiştirilir.</p>
-
-      <h2>9) İletişim</h2>
-      <p>Gizlilikle ilgili tüm talepler için: <a href="mailto:destek@moodi.app">destek@moodi.app</a></p>
+    <div class="container">
+        <div class="app-name">🚀 Tap Jump Runner</div>
+        
+        <div class="lang-section">
+            <h1>Gizlilik Politikası</h1>
+            <p><strong>Son Güncelleme:</strong> 11 Aralık 2025</p>
+            
+            <p>Bu Gizlilik Politikası, <strong>Tap Jump Runner</strong> mobil oyun uygulamasının ("Uygulama") veri toplama, kullanma ve koruma uygulamalarını açıklamaktadır. Uygulamayı kullanarak, bu politikada açıklanan uygulamaları kabul etmiş olursunuz.</p>
+            
+            <h2>Gizlilik Politikası</h2>
+            <p><strong>Tap Jump Runner</strong> ("biz", "bizim" veya "uygulama") olarak, kullanıcılarımızın gizliliğini korumayı taahhüt ediyoruz. Bu Gizlilik Politikası, uygulamamızın veri toplama, kullanma ve koruma uygulamalarını açıklamaktadır.</p>
+            
+            <h2>Toplanan Veriler</h2>
+            <p><strong>Yerel Olarak Saklanan Veriler:</strong></p>
+            <p>Uygulama, tüm verileri cihazınızda yerel olarak saklar (SharedPreferences kullanarak). Toplanan veriler şunlardır:</p>
+            <ul>
+                <li><strong>Oyun Skorları:</strong> Mevcut oyun skorları ve en yüksek skorlar</li>
+                <li><strong>İlerleme Verileri:</strong> Toplanan coinler, açılan karakter görünümleri (skins), kazanılan başarımlar</li>
+                <li><strong>Oyun İstatistikleri:</strong> Toplam oyun sayısı, toplam skor, en yüksek combo sayısı, toplanan power-up'lar, engellerden kaçınma sayısı, toplam oyun süresi, ilk oyun tarihi, son oyun tarihi</li>
+                <li><strong>Kullanıcı Ayarları:</strong> Ses açık/kapalı tercihi, dil tercihi (Türkçe/İngilizce)</li>
+                <li><strong>Karakter Seçimi:</strong> Seçili karakter/görünüm bilgisi</li>
+                <li><strong>Günlük Görevler:</strong> Günlük görevlerin ilerleme durumu ve tamamlanma bilgileri</li>
+            </ul>
+            
+            <p><strong>Üçüncü Taraf Hizmetleri:</strong></p>
+            <ul>
+                <li><strong>RevenueCat:</strong> Uygulama içi satın alma işlemleri (premium özellikler, coin paketleri) için kullanılır. RevenueCat'in gizlilik politikası: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></li>
+                <li><strong>Google Play:</strong> Satın alma işlemleri Google Play Billing üzerinden işlenir. Google'ın gizlilik politikası: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li>Tüm oyun verileri cihazınızda yerel olarak saklanır (SharedPreferences)</li>
+            </ul>
+            
+            <h2>Veri Kullanımı</h2>
+            <p>Toplanan veriler şu amaçlarla kullanılır:</p>
+            <ul>
+                <li>Oyun ilerlemesini kaydetmek ve cihazınızda saklamak</li>
+                <li>Uygulama içi satın alma işlemlerini işlemek (RevenueCat ve Google Play üzerinden)</li>
+                <li>Oyun istatistiklerini görüntülemek (skorlar, başarımlar, görevler)</li>
+                <li>Kullanıcı tercihlerini hatırlamak (ses ayarları, dil seçimi, seçili karakter)</li>
+                <li>Günlük görevlerin ilerlemesini takip etmek</li>
+                <li>Oyun deneyimini kişiselleştirmek</li>
+            </ul>
+            
+            <h2>Veri Paylaşımı</h2>
+            <ul>
+                <li>Oyun verileriniz (skorlar, ilerleme, istatistikler) cihazınızda yerel olarak saklanır ve hiçbir üçüncü taraf ile paylaşılmaz</li>
+                <li>Satın alma işlemleri sırasında, işlemin tamamlanması için gerekli minimum bilgiler RevenueCat ve Google Play ile paylaşılır</li>
+                <li>Google Play satın alma işlemleri Google'ın gizlilik politikasına tabidir</li>
+                <li>RevenueCat, satın alma işlemlerini işlemek için kullanılır ve kendi gizlilik politikasına tabidir</li>
+                <li>Kişisel bilgileriniz (isim, e-posta, telefon numarası) toplanmaz veya paylaşılmaz</li>
+                <li>Analitik veya reklam amaçlı veri toplama yapılmamaktadır</li>
+            </ul>
+            
+            <h2>Veri Güvenliği</h2>
+            <ul>
+                <li>Tüm oyun verileri cihazınızda yerel olarak saklanır (SharedPreferences kullanılarak)</li>
+                <li>Kullanıcı adı, e-posta adresi, telefon numarası veya diğer kişisel bilgiler toplanmaz</li>
+                <li>Verileriniz internet üzerinden gönderilmez veya sunucularda saklanmaz</li>
+                <li>Uygulama, cihazınızın güvenlik özelliklerini kullanarak verileri korur</li>
+                <li>Uygulamayı silerseniz, tüm yerel veriler de silinir</li>
+            </ul>
+            
+            <h2>Çocukların Gizliliği</h2>
+            <p>Uygulamamız 13 yaş altındaki çocuklardan bilerek veri toplamamaktadır. Uygulama, çocukların gizliliğini korumak için tasarlanmıştır ve COPPA (Children's Online Privacy Protection Act) gerekliliklerine uygundur.</p>
+            
+            <h2>Veri Silme</h2>
+            <p>Oyun verilerinizi silmek isterseniz, uygulamayı cihazınızdan kaldırmanız yeterlidir. Uygulama silindiğinde, cihazınızda saklanan tüm yerel veriler de otomatik olarak silinir.</p>
+            
+            <h2>Haklarınız</h2>
+            <p>Verileriniz cihazınızda yerel olarak saklandığı için, verilerinize tam kontrol sahibisiniz. Uygulamayı kaldırarak veya cihazınızın ayarlarından uygulama verilerini temizleyerek verilerinizi silebilirsiniz.</p>
+            
+            <h2>Değişiklikler</h2>
+            <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişikliklerde kullanıcıları bilgilendireceğiz.</p>
+            
+            <h2>İletişim</h2>
+            <p>Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:</p>
+            <p>E-posta: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p><strong>Not:</strong> Lütfen e-posta adresini kendi iletişim bilginizle değiştirin.</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="lang-section">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated:</strong> December 11, 2025</p>
+            
+            <p>This Privacy Policy describes how <strong>Tap Jump Runner</strong> mobile game application ("App") collects, uses, and protects your data. By using the App, you agree to the practices described in this policy.</p>
+            
+            <h2>Privacy Policy</h2>
+            <p><strong>Tap Jump Runner</strong> ("we", "our", or "app") is committed to protecting your privacy. This Privacy Policy explains how our app collects, uses, and protects your data.</p>
+            
+            <h2>Data Collected</h2>
+            <p><strong>Locally Stored Data:</strong></p>
+            <ul>
+                <li>Game scores and high scores</li>
+                <li>Progress data (coins, unlocked skins, achievements)</li>
+                <li>Game statistics</li>
+                <li>User settings (sound, language preference)</li>
+                <li>Selected character/skin</li>
+            </ul>
+            
+            <p><strong>Third-Party Services:</strong></p>
+            <ul>
+                <li><strong>RevenueCat:</strong> Used for in-app purchases (premium features, coin packs). RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></li>
+                <li><strong>Google Play:</strong> In-app purchase transactions are processed through Google Play Billing. Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li>All game data is stored locally on your device (SharedPreferences)</li>
+            </ul>
+            
+            <h2>Data Usage</h2>
+            <p>Collected data is used for:</p>
+            <ul>
+                <li>Saving and storing game progress on your device</li>
+                <li>Processing in-app purchases (through RevenueCat and Google Play)</li>
+                <li>Displaying game statistics (scores, achievements, missions)</li>
+                <li>Remembering user preferences (sound settings, language selection, selected character)</li>
+                <li>Tracking daily mission progress</li>
+                <li>Personalizing the game experience</li>
+            </ul>
+            
+            <h2>Data Sharing</h2>
+            <ul>
+                <li>Your game data (scores, progress, statistics) is stored locally on your device and is not shared with any third parties</li>
+                <li>During purchase transactions, minimal necessary information is shared with RevenueCat and Google Play to complete the transaction</li>
+                <li>Google Play purchases are subject to Google's privacy policy</li>
+                <li>RevenueCat is used to process purchases and is subject to its own privacy policy</li>
+                <li>Your personal information (name, email, phone number) is not collected or shared</li>
+                <li>No data is collected for analytics or advertising purposes</li>
+            </ul>
+            
+            <h2>Data Security</h2>
+            <ul>
+                <li>All game data is stored locally on your device (using SharedPreferences)</li>
+                <li>We do not collect usernames, email addresses, phone numbers, or other personal information</li>
+                <li>Your data is not transmitted over the internet or stored on servers</li>
+                <li>The app uses your device's security features to protect data</li>
+                <li>If you uninstall the app, all local data will be deleted</li>
+            </ul>
+            
+            <h2>Children's Privacy</h2>
+            <p>Our app does not knowingly collect data from children under 13 years of age. The app is designed to protect children's privacy and complies with COPPA (Children's Online Privacy Protection Act) requirements.</p>
+            
+            <h2>Data Deletion</h2>
+            <p>If you wish to delete your game data, simply uninstall the app from your device. When the app is uninstalled, all locally stored data will be automatically deleted.</p>
+            
+            <h2>Your Rights</h2>
+            <p>Since your data is stored locally on your device, you have full control over your data. You can delete your data by uninstalling the app or clearing app data from your device settings.</p>
+            
+            <h2>Changes</h2>
+            <p>This Privacy Policy may be updated from time to time. We will notify users of significant changes.</p>
+            
+            <h2>Contact</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p><strong>Note:</strong> Please replace the email address with your own contact information.</p>
+        </div>
     </div>
-  </section>
-
-  <!-- EN -->
-  <section id="en" class="lang">
-    <div class="card">
-      <h2>1) Overview</h2>
-      <p>Moodi is a mobile app for mood tracking, breathing exercises, motivation, and personalized suggestions. We value your privacy.</p>
-
-      <h2>2) Data We Collect</h2>
-      <ul>
-        <li><strong>Account:</strong> Name and email when signing in with Google.</li>
-        <li><strong>App Data:</strong> Mood logs, habit/task progress, exercise usage.</li>
-        <li><strong>Device/Logs:</strong> Crash reports and anonymous usage analytics.</li>
-        <li><strong>Ads:</strong> Anonymized ad data via Google AdMob.</li>
-      </ul>
-
-      <h2>3) How We Use Data</h2>
-      <ul>
-        <li>Provide and improve core app features,</li>
-        <li>Offer personalized insights and statistics,</li>
-        <li>Security, debugging, and performance analysis.</li>
-      </ul>
-
-      <h2>4) Third-Party Services</h2>
-      <ul>
-        <li><strong>Firebase</strong> (Auth/Firestore/Analytics)</li>
-        <li><strong>Google Sign-In</strong></li>
-        <li><strong>Google AdMob</strong> (ads)</li>
-        <li>(If used) <strong>Firebase Cloud Messaging</strong> (push)</li>
-      </ul>
-      <p>Data processing by these services is governed by their own privacy policies.</p>
-
-      <h2>5) Retention & Security</h2>
-      <p>Data is stored in our cloud (Firebase). Upon account deletion, personal data is deleted or anonymized within a reasonable period.</p>
-
-      <h2>6) Your Rights</h2>
-      <ul>
-        <li>Access, rectify, and delete your data,</li>
-        <li>Withdraw consent,</li>
-        <li>Other rights under applicable laws.</li>
-      </ul>
-
-      <h2>7) Children’s Privacy</h2>
-      <p>Moodi is not intended for children under 13.</p>
-
-      <h2>8) Changes</h2>
-      <p>Updates will be posted here and the “Last updated” date will be adjusted.</p>
-
-      <h2>9) Contact</h2>
-      <p>For privacy requests: <a href="mailto:yasin.isiktas1@gmail.com">yasin.isiktas1@gmail.com</a></p>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="y"></span> Moodi. All rights reserved.
-  </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
+
