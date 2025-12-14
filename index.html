@@ -1,86 +1,291 @@
-Put your HTML text here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tap Jump Runner - Privacy Policy / Gizlilik Politikası</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #0B0B2A;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #0B0B2A 0%, #1a1a3a 50%, #0B0B2A 100%);
             color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
         }
+        
+        /* Animated stars background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+                radial-gradient(2px 2px at 60% 70%, #fff, transparent),
+                radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+                radial-gradient(1px 1px at 80% 10%, #fff, transparent),
+                radial-gradient(2px 2px at 90% 40%, #fff, transparent),
+                radial-gradient(1px 1px at 33% 60%, #fff, transparent),
+                radial-gradient(1px 1px at 55% 80%, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200% 200%;
+            animation: stars 20s linear infinite;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        @keyframes stars {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+        
         .container {
-            background-color: #1a1a3a;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 136, 255, 0.1) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .app-name {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00FFFF 0%, #0088FF 50%, #0044FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .app-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .content-box {
+            background: rgba(26, 26, 58, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
         h1 {
             color: #00FFFF;
-            border-bottom: 2px solid #00FFFF;
-            padding-bottom: 10px;
+            border-bottom: 3px solid #00FFFF;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
+        
         h2 {
             color: #0088FF;
-            margin-top: 30px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            padding-left: 15px;
+            border-left: 4px solid #0088FF;
         }
+        
         .lang-section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
+        
+        .update-date {
+            background: rgba(0, 136, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #0088FF;
+            font-weight: 600;
+        }
+        
         ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style: none;
+            padding-left: 0;
         }
+        
+        ul li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        ul li:last-child {
+            border-bottom: none;
+        }
+        
+        ul li::before {
+            content: '🚀';
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        ul li strong {
+            color: #00FFFF;
+        }
+        
         a {
             color: #00FFFF;
             text-decoration: none;
+            border-bottom: 1px dotted #00FFFF;
+            transition: all 0.3s ease;
         }
+        
         a:hover {
-            text-decoration: underline;
+            color: #0088FF;
+            border-bottom: 1px solid #0088FF;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
         }
+        
         .divider {
-            border-top: 1px solid #333;
-            margin: 40px 0;
+            border-top: 2px solid rgba(0, 255, 255, 0.3);
+            margin: 50px 0;
+            position: relative;
         }
-        .app-name {
-            text-align: center;
-            font-size: 2em;
+        
+        .divider::before {
+            content: '⭐';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0B0B2A 0%, #1a1a3a 100%);
+            padding: 0 20px;
+            font-size: 1.5em;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box strong {
             color: #00FFFF;
-            margin-bottom: 30px;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, rgba(0, 136, 255, 0.2) 0%, rgba(0, 68, 255, 0.2) 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 136, 255, 0.4);
+            margin-top: 20px;
+        }
+        
+        .note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        
+        .note strong {
+            color: #FFC107;
+        }
+        
+        @media (max-width: 768px) {
+            .app-name {
+                font-size: 1.8em;
+            }
+            
+            .content-box {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="app-name">🚀 Tap Jump Runner</div>
+        <div class="header">
+            <div class="app-icon">🚀</div>
+            <div class="app-name">TAP JUMP RUNNER</div>
+            <p style="color: #00FFFF; font-size: 1.1em; margin-top: 10px;">Privacy Policy / Gizlilik Politikası</p>
+        </div>
         
-        <div class="lang-section">
+        <!-- Türkçe Bölüm -->
+        <div class="content-box lang-section">
             <h1>Gizlilik Politikası</h1>
-            <p><strong>Son Güncelleme:</strong> 11 Aralık 2025</p>
+            <div class="update-date">
+                <strong>Son Güncelleme:</strong> 11 Aralık 2025
+            </div>
             
             <p>Bu Gizlilik Politikası, <strong>Tap Jump Runner</strong> mobil oyun uygulamasının ("Uygulama") veri toplama, kullanma ve koruma uygulamalarını açıklamaktadır. Uygulamayı kullanarak, bu politikada açıklanan uygulamaları kabul etmiş olursunuz.</p>
             
-            <h2>Gizlilik Politikası</h2>
-            <p><strong>Tap Jump Runner</strong> ("biz", "bizim" veya "uygulama") olarak, kullanıcılarımızın gizliliğini korumayı taahhüt ediyoruz. Bu Gizlilik Politikası, uygulamamızın veri toplama, kullanma ve koruma uygulamalarını açıklamaktadır.</p>
+            <div class="highlight-box">
+                <strong>🎮 Oyun Hakkında</strong>
+                <p>Tap Jump Runner, uzay temalı bir tap-to-jump oyunudur. Roketinizi kontrol ederek engellerden kaçınır, coin toplar, karakter görünümleri açarsınız ve günlük görevleri tamamlarsınız.</p>
+            </div>
             
             <h2>Toplanan Veriler</h2>
-            <p><strong>Yerel Olarak Saklanan Veriler:</strong></p>
-            <p>Uygulama, tüm verileri cihazınızda yerel olarak saklar (SharedPreferences kullanarak). Toplanan veriler şunlardır:</p>
+            
+            <div class="highlight-box">
+                <strong>📱 Yerel Olarak Saklanan Veriler</strong>
+                <p>Uygulama, tüm verileri cihazınızda yerel olarak saklar (SharedPreferences kullanarak). Toplanan veriler şunlardır:</p>
+            </div>
+            
             <ul>
                 <li><strong>Oyun Skorları:</strong> Mevcut oyun skorları ve en yüksek skorlar</li>
                 <li><strong>İlerleme Verileri:</strong> Toplanan coinler, açılan karakter görünümleri (skins), kazanılan başarımlar</li>
                 <li><strong>Oyun İstatistikleri:</strong> Toplam oyun sayısı, toplam skor, en yüksek combo sayısı, toplanan power-up'lar, engellerden kaçınma sayısı, toplam oyun süresi, ilk oyun tarihi, son oyun tarihi</li>
                 <li><strong>Kullanıcı Ayarları:</strong> Ses açık/kapalı tercihi, dil tercihi (Türkçe/İngilizce)</li>
-                <li><strong>Karakter Seçimi:</strong> Seçili karakter/görünüm bilgisi</li>
+                <li><strong>Karakter Seçimi:</strong> Seçili karakter/görünüm bilgisi (Default, Red Rocket, Green Comet, Gold Star, Purple Nova)</li>
                 <li><strong>Günlük Görevler:</strong> Günlük görevlerin ilerleme durumu ve tamamlanma bilgileri</li>
+                <li><strong>Başarımlar:</strong> Kazanılan başarımlar ve ilerleme durumları</li>
             </ul>
             
-            <p><strong>Üçüncü Taraf Hizmetleri:</strong></p>
+            <div class="highlight-box">
+                <strong>🔗 Üçüncü Taraf Hizmetleri</strong>
+            </div>
+            
             <ul>
                 <li><strong>RevenueCat:</strong> Uygulama içi satın alma işlemleri (premium özellikler, coin paketleri) için kullanılır. RevenueCat'in gizlilik politikası: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></li>
                 <li><strong>Google Play:</strong> Satın alma işlemleri Google Play Billing üzerinden işlenir. Google'ın gizlilik politikası: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
@@ -95,7 +300,8 @@ Put your HTML text here<!DOCTYPE html>
                 <li>Oyun istatistiklerini görüntülemek (skorlar, başarımlar, görevler)</li>
                 <li>Kullanıcı tercihlerini hatırlamak (ses ayarları, dil seçimi, seçili karakter)</li>
                 <li>Günlük görevlerin ilerlemesini takip etmek</li>
-                <li>Oyun deneyimini kişiselleştirmek</li>
+                <li>Oyun deneyimini kişiselleştirmek (karakter görünümleri, bonuslar)</li>
+                <li>Başarımların kazanılmasını ve gösterilmesini sağlamak</li>
             </ul>
             
             <h2>Veri Paylaşımı</h2>
@@ -106,6 +312,8 @@ Put your HTML text here<!DOCTYPE html>
                 <li>RevenueCat, satın alma işlemlerini işlemek için kullanılır ve kendi gizlilik politikasına tabidir</li>
                 <li>Kişisel bilgileriniz (isim, e-posta, telefon numarası) toplanmaz veya paylaşılmaz</li>
                 <li>Analitik veya reklam amaçlı veri toplama yapılmamaktadır</li>
+                <li>Konum verileri toplanmaz</li>
+                <li>Kişisel kimlik bilgileri toplanmaz</li>
             </ul>
             
             <h2>Veri Güvenliği</h2>
@@ -115,51 +323,84 @@ Put your HTML text here<!DOCTYPE html>
                 <li>Verileriniz internet üzerinden gönderilmez veya sunucularda saklanmaz</li>
                 <li>Uygulama, cihazınızın güvenlik özelliklerini kullanarak verileri korur</li>
                 <li>Uygulamayı silerseniz, tüm yerel veriler de silinir</li>
+                <li>Verileriniz şifrelenmiş bir şekilde cihazınızda saklanır</li>
             </ul>
             
             <h2>Çocukların Gizliliği</h2>
-            <p>Uygulamamız 13 yaş altındaki çocuklardan bilerek veri toplamamaktadır. Uygulama, çocukların gizliliğini korumak için tasarlanmıştır ve COPPA (Children's Online Privacy Protection Act) gerekliliklerine uygundur.</p>
+            <div class="highlight-box">
+                <p>Uygulamamız 13 yaş altındaki çocuklardan bilerek veri toplamamaktadır. Uygulama, çocukların gizliliğini korumak için tasarlanmıştır ve COPPA (Children's Online Privacy Protection Act) gerekliliklerine uygundur.</p>
+            </div>
             
             <h2>Veri Silme</h2>
             <p>Oyun verilerinizi silmek isterseniz, uygulamayı cihazınızdan kaldırmanız yeterlidir. Uygulama silindiğinde, cihazınızda saklanan tüm yerel veriler de otomatik olarak silinir.</p>
+            <p>Alternatif olarak, cihazınızın ayarlarından uygulama verilerini temizleyebilirsiniz:</p>
+            <ul>
+                <li><strong>Android:</strong> Ayarlar > Uygulamalar > Tap Jump Runner > Depolama > Verileri Temizle</li>
+                <li><strong>iOS:</strong> Ayarlar > Genel > iPhone Depolama > Tap Jump Runner > Uygulamayı Kaldır</li>
+            </ul>
             
             <h2>Haklarınız</h2>
             <p>Verileriniz cihazınızda yerel olarak saklandığı için, verilerinize tam kontrol sahibisiniz. Uygulamayı kaldırarak veya cihazınızın ayarlarından uygulama verilerini temizleyerek verilerinizi silebilirsiniz.</p>
+            <p>GDPR ve diğer veri koruma yasaları kapsamında aşağıdaki haklara sahipsiniz:</p>
+            <ul>
+                <li>Verilerinize erişim hakkı</li>
+                <li>Verilerinizi silme hakkı</li>
+                <li>Veri taşınabilirliği hakkı (verileriniz zaten cihazınızda)</li>
+            </ul>
             
             <h2>Değişiklikler</h2>
-            <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişikliklerde kullanıcıları bilgilendireceğiz.</p>
+            <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişikliklerde kullanıcıları bilgilendireceğiz. Bu sayfanın "Son Güncelleme" tarihini kontrol ederek en güncel versiyonu görebilirsiniz.</p>
             
             <h2>İletişim</h2>
-            <p>Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:</p>
-            <p>E-posta: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p><strong>Not:</strong> Lütfen e-posta adresini kendi iletişim bilginizle değiştirin.</p>
+            <div class="contact-info">
+                <p>Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:</p>
+                <p style="margin-top: 15px;"><strong>E-posta:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <div class="note">
+                    <strong>Not:</strong> Lütfen e-posta adresini kendi iletişim bilginizle değiştirin.
+                </div>
+            </div>
         </div>
         
         <div class="divider"></div>
         
-        <div class="lang-section">
+        <!-- English Section -->
+        <div class="content-box lang-section">
             <h1>Privacy Policy</h1>
-            <p><strong>Last Updated:</strong> December 11, 2025</p>
+            <div class="update-date">
+                <strong>Last Updated:</strong> December 11, 2025
+            </div>
             
             <p>This Privacy Policy describes how <strong>Tap Jump Runner</strong> mobile game application ("App") collects, uses, and protects your data. By using the App, you agree to the practices described in this policy.</p>
             
-            <h2>Privacy Policy</h2>
-            <p><strong>Tap Jump Runner</strong> ("we", "our", or "app") is committed to protecting your privacy. This Privacy Policy explains how our app collects, uses, and protects your data.</p>
+            <div class="highlight-box">
+                <strong>🎮 About the Game</strong>
+                <p>Tap Jump Runner is a space-themed tap-to-jump game. You control your rocket to avoid obstacles, collect coins, unlock character skins, and complete daily missions.</p>
+            </div>
             
             <h2>Data Collected</h2>
-            <p><strong>Locally Stored Data:</strong></p>
+            
+            <div class="highlight-box">
+                <strong>📱 Locally Stored Data</strong>
+                <p>The app stores all data locally on your device (using SharedPreferences). Collected data includes:</p>
+            </div>
+            
             <ul>
-                <li>Game scores and high scores</li>
-                <li>Progress data (coins, unlocked skins, achievements)</li>
-                <li>Game statistics</li>
-                <li>User settings (sound, language preference)</li>
-                <li>Selected character/skin</li>
+                <li><strong>Game Scores:</strong> Current game scores and high scores</li>
+                <li><strong>Progress Data:</strong> Collected coins, unlocked character skins, earned achievements</li>
+                <li><strong>Game Statistics:</strong> Total games played, total score, highest combo count, power-ups collected, obstacles avoided, total play time, first play date, last play date</li>
+                <li><strong>User Settings:</strong> Sound on/off preference, language preference (Turkish/English)</li>
+                <li><strong>Character Selection:</strong> Selected character/skin information (Default, Red Rocket, Green Comet, Gold Star, Purple Nova)</li>
+                <li><strong>Daily Missions:</strong> Daily mission progress and completion information</li>
+                <li><strong>Achievements:</strong> Earned achievements and progress status</li>
             </ul>
             
-            <p><strong>Third-Party Services:</strong></p>
+            <div class="highlight-box">
+                <strong>🔗 Third-Party Services</strong>
+            </div>
+            
             <ul>
                 <li><strong>RevenueCat:</strong> Used for in-app purchases (premium features, coin packs). RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></li>
-                <li><strong>Google Play:</strong> In-app purchase transactions are processed through Google Play Billing. Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li><strong>Google Play:</strong> Purchase transactions are processed through Google Play Billing. Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
                 <li>All game data is stored locally on your device (SharedPreferences)</li>
             </ul>
             
@@ -171,7 +412,8 @@ Put your HTML text here<!DOCTYPE html>
                 <li>Displaying game statistics (scores, achievements, missions)</li>
                 <li>Remembering user preferences (sound settings, language selection, selected character)</li>
                 <li>Tracking daily mission progress</li>
-                <li>Personalizing the game experience</li>
+                <li>Personalizing the game experience (character skins, bonuses)</li>
+                <li>Enabling and displaying achievements</li>
             </ul>
             
             <h2>Data Sharing</h2>
@@ -182,6 +424,8 @@ Put your HTML text here<!DOCTYPE html>
                 <li>RevenueCat is used to process purchases and is subject to its own privacy policy</li>
                 <li>Your personal information (name, email, phone number) is not collected or shared</li>
                 <li>No data is collected for analytics or advertising purposes</li>
+                <li>Location data is not collected</li>
+                <li>Personal identification information is not collected</li>
             </ul>
             
             <h2>Data Security</h2>
@@ -191,27 +435,43 @@ Put your HTML text here<!DOCTYPE html>
                 <li>Your data is not transmitted over the internet or stored on servers</li>
                 <li>The app uses your device's security features to protect data</li>
                 <li>If you uninstall the app, all local data will be deleted</li>
+                <li>Your data is stored encrypted on your device</li>
             </ul>
             
             <h2>Children's Privacy</h2>
-            <p>Our app does not knowingly collect data from children under 13 years of age. The app is designed to protect children's privacy and complies with COPPA (Children's Online Privacy Protection Act) requirements.</p>
+            <div class="highlight-box">
+                <p>Our app does not knowingly collect data from children under 13 years of age. The app is designed to protect children's privacy and complies with COPPA (Children's Online Privacy Protection Act) requirements.</p>
+            </div>
             
             <h2>Data Deletion</h2>
             <p>If you wish to delete your game data, simply uninstall the app from your device. When the app is uninstalled, all locally stored data will be automatically deleted.</p>
+            <p>Alternatively, you can clear app data from your device settings:</p>
+            <ul>
+                <li><strong>Android:</strong> Settings > Apps > Tap Jump Runner > Storage > Clear Data</li>
+                <li><strong>iOS:</strong> Settings > General > iPhone Storage > Tap Jump Runner > Delete App</li>
+            </ul>
             
             <h2>Your Rights</h2>
             <p>Since your data is stored locally on your device, you have full control over your data. You can delete your data by uninstalling the app or clearing app data from your device settings.</p>
+            <p>Under GDPR and other data protection laws, you have the following rights:</p>
+            <ul>
+                <li>Right to access your data</li>
+                <li>Right to delete your data</li>
+                <li>Right to data portability (your data is already on your device)</li>
+            </ul>
             
             <h2>Changes</h2>
-            <p>This Privacy Policy may be updated from time to time. We will notify users of significant changes.</p>
+            <p>This Privacy Policy may be updated from time to time. We will notify users of significant changes. You can check the "Last Updated" date on this page to see the most current version.</p>
             
             <h2>Contact</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us:</p>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p><strong>Note:</strong> Please replace the email address with your own contact information.</p>
+            <div class="contact-info">
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <p style="margin-top: 15px;"><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <div class="note">
+                    <strong>Note:</strong> Please replace the email address with your own contact information.
+                </div>
+            </div>
         </div>
     </div>
 </body>
 </html>
-
-
